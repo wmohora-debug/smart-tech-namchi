@@ -1,0 +1,22 @@
+{
+  "name": "Smart Tech Namchi",
+  "short_name": "Smart Tech",
+  "description": "The Ultimate Printing Solution in Namchi, South Sikkim",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#0057FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
