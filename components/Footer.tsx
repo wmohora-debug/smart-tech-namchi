@@ -172,11 +172,16 @@ export default function Footer() {
                   Namchi, South Sikkim, India 737126
                 </span>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
-                <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                <a href="tel:+917719330915" className="hover:text-white transition-colors">
-                  +91 77193 30915
-                </a>
+              <li className="flex items-start space-x-3 text-sm text-gray-400">
+                <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col space-y-1">
+                  <a href="tel:+917719330915" className="hover:text-white transition-colors">
+                    +91 77193 30915
+                  </a>
+                  <span className="text-[11px] text-gray-500 font-mono tracking-wider pt-0.5">ADDITIONAL NUMBERS:</span>
+                  <span className="text-gray-400 select-all">8514919701</span>
+                  <span className="text-gray-400 select-all">7364843867</span>
+                </div>
               </li>
               <li className="flex items-center space-x-3 text-sm text-gray-400">
                 <Mail className="w-4 h-4 text-accent flex-shrink-0" />

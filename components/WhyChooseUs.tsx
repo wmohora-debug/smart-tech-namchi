@@ -26,7 +26,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Trusted Local Service",
-    description: "Over a decade of reliable service, partnering with local educational departments, government offices, business teams, and clubs in Namchi.",
+    description: "Over 9 years of reliable service, partnering with local educational departments, government offices, business teams, and clubs in Namchi.",
   },
   {
     icon: Users,

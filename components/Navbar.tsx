@@ -38,9 +38,7 @@ export default function Navbar() {
     const element = document.querySelector(href);
     if (element) {
       const offset = 80; // height of navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
@@ -53,7 +51,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || isOpen
           ? "glass-navbar py-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]"
           : "bg-transparent py-6"
       }`}
@@ -125,16 +123,16 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden glass-panel border-b border-white/5 absolute top-full left-0 right-0 overflow-hidden shadow-2xl"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-bg-dark/95 border-b border-white/10 absolute top-full left-0 right-0 overflow-hidden shadow-2xl backdrop-blur-xl"
           >
-            <div className="px-6 py-6 flex flex-col space-y-4">
+            <div className="px-6 py-6 flex flex-col space-y-3">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="py-2 text-base text-gray-300 font-medium hover:text-white border-b border-white/5 transition-colors"
+                  className="py-3 text-base text-gray-300 font-semibold hover:text-white border-b border-white/5 hover:border-white/10 hover:pl-2 transition-all duration-300 block"
                 >
                   {item.label}
                 </a>

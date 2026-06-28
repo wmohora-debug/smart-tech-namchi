@@ -116,6 +116,12 @@ const galleryItems = [
     description: "Clean plastic spiral document bindings for reports, training manuals, and student projects.",
     src: "/gallery/spiral-binding.jpg",
   },
+  {
+    title: "Custom Achievement Trophies",
+    categories: ["Sports"],
+    description: "Laser-engraved achievement awards, sports league trophies, and customized corporate cups.",
+    src: "/gallery/trophies.jpeg",
+  },
 ];
 
 export default function GalleryPreview() {

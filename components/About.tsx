@@ -58,7 +58,7 @@ function Counter({ end, duration = 2000, suffix = "" }: { end: number; duration?
 
 // Placeholder statistics - feel free to replace with real business figures later
 const statsData = [
-  { icon: Calendar, end: 12, suffix: "+", label: "Years Experience" },
+  { icon: Calendar, end: 9, suffix: "+", label: "Years Experience" },
   { icon: FolderCheck, end: 12000, suffix: "+", label: "Projects" },
   { icon: Cpu, end: 12, suffix: "", label: "Services" },
   { icon: Users, end: 99, suffix: "%", label: "Customer Satisfaction" },
@@ -105,7 +105,7 @@ export default function About() {
               className="absolute -bottom-6 -right-6 md:right-4 p-6 rounded-card glass-panel border border-white/10 shadow-2xl max-w-[200px] z-20 text-center"
             >
               <span className="text-3xl font-heading font-black text-accent block mb-1">
-                Est. 2014
+                Est. 2017
               </span>
               <span className="text-xs font-semibold text-gray-300 uppercase tracking-widest block">
                 Namchi, Sikkim

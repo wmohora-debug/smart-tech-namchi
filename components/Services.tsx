@@ -120,7 +120,7 @@ const servicesList: ServiceItem[] = [
   {
     icon: Trophy,
     title: "Trophies",
-    image: "/gallery/Shop-front.jpeg",
+    image: "/gallery/trophies.jpeg",
     description: "Exquisite metal, acrylic, and crystal achievement trophies and awards. Custom laser-engraved metal labels on wooden or marble bases.",
     applications: ["Sports Tournaments & Leagues", "Corporate Excellence Awards", "Academic Meritorious prizes", "Community Service recognitions"],
     benefits: ["Vibrant metal, crystal, and acrylic selections", "Precision laser-engraved metal plate titles", "Heavy solid marble and wood bases", "Durable electroplated finishes"],
