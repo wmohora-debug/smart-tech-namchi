@@ -94,7 +94,7 @@ export default function RootLayout({
         "name": "What printing services does SMART TECH NAMCHI offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SMART TECH NAMCHI offers 12 core services including Digital Printing, Flex Banner Printing, PVC ID Cards, Certificates, Bill Books, Rubber Stamps, Photo Framing, Spiral and Hard Binding, Trophies, Sports Goods, and custom sublimated Sports Jerseys."
+          "text": "SMART TECH NAMCHI offers 16 core services including Digital Printing, Flex Banner Printing, PVC ID Cards, Certificates, Bill Books, Rubber Stamps, Photo Framing, Spiral and Hard Binding, Trophies, Sports Goods, custom sublimated Sports Jerseys, 2D & 3D LED Board Panelling, Token Tax, Car Pollution Testing, and 2-Wheeler & 4-Wheeler Insurance."
         }
       },
       {

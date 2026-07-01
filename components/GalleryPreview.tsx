@@ -17,15 +17,9 @@ import {
 } from "lucide-react";
 import { fadeInUp, staggerContainer } from "../lib/variants";
 
-const categories = ["All", "Printing", "Sports", "Machines", "Certificates", "Frames", "Shop"];
+const categories = ["All", "Printing", "Sports", "Machines", "Certificates & Frames", "Utility"];
 
 const galleryItems = [
-  {
-    title: "Namchi Shop Front",
-    categories: ["Shop", "Certificates", "Frames"],
-    description: "Our main storefront and design workspace located on Melli Road, Namchi.",
-    src: "/gallery/Shop-front.jpeg",
-  },
   {
     title: "High-Speed Print Plotter",
     categories: ["Machines", "Printing"],
@@ -39,7 +33,7 @@ const galleryItems = [
     src: "/gallery/football-jersey-1.jpeg",
   },
   {
-    title: "Namchi Football Uniform",
+    title: "Football Uniform",
     categories: ["Sports"],
     description: "Athletic jersey sublimation design featuring custom player numbering.",
     src: "/gallery/football-jersey-2.jpeg",
@@ -76,7 +70,7 @@ const galleryItems = [
   },
   {
     title: "Academic Certificates",
-    categories: ["Certificates", "Printing"],
+    categories: ["Certificates & Frames", "Printing"],
     description: "Premium embossed seminar and graduation certificates with gold foil stamping.",
     src: "/gallery/certificates.jpg",
   },
@@ -94,7 +88,7 @@ const galleryItems = [
   },
   {
     title: "Premium Photo Framing",
-    categories: ["Frames"],
+    categories: ["Certificates & Frames"],
     description: "Bespoke wooden mouldings and clear glass frames for photography and artwork displays.",
     src: "/gallery/photo-framing.jpg",
   },
@@ -121,6 +115,30 @@ const galleryItems = [
     categories: ["Sports"],
     description: "Laser-engraved achievement awards, sports league trophies, and customized corporate cups.",
     src: "/gallery/trophies.jpeg",
+  },
+  {
+    title: "2D & 3D LED Display Boards",
+    categories: ["Printing"],
+    description: "Acrylic letters and backlit glow signs for premium business shop-front panels.",
+    src: "/gallery/led-display-board-panelling.webp",
+  },
+  {
+    title: "Vehicle Insurance Services",
+    categories: ["Utility"],
+    description: "On-demand digital insurance issuance and print renewals for two-wheelers and four-wheelers.",
+    src: "/gallery/insurance.png",
+  },
+  {
+    title: "Emission Pollution Testing Center",
+    categories: ["Utility"],
+    description: "Authorized emission testing with digital PUC generation and instant online Vahan sync.",
+    src: "/gallery/pollution.jpeg",
+  },
+  {
+    title: "Vehicle Token Tax Payments",
+    categories: ["Utility"],
+    description: "Instant road and token tax processing for Sikkim vehicles with official receipt printing.",
+    src: "/gallery/token-tax.webp",
   },
 ];
 

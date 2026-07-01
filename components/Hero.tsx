@@ -2,13 +2,26 @@
 
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { MessageSquare, Phone, ArrowRight, Sparkles, Layers, Cpu } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MessageSquare, Phone, ArrowRight, Sparkles, Layers, Cpu, Play, X } from "lucide-react";
 import Image from "next/image";
 import { fadeInUp, staggerContainer } from "../lib/variants";
 
 export default function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  // Lock page scrolling when video is open
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVideoOpen]);
   const handleScrollToServices = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const element = document.querySelector("#services");
@@ -202,135 +215,97 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Side Visual Illustration */}
+        {/* Right Side Visual Illustration - Clickable for Virtual Tour */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex justify-center items-center relative"
+          className="lg:col-span-5 flex justify-center items-center relative cursor-pointer group"
+          onClick={() => setIsVideoOpen(true)}
         >
           {/* Main Visual Container */}
-          <div className="relative w-full max-w-[420px] aspect-square rounded-[32px] glass-panel border border-white/10 flex items-center justify-center p-8 overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]">
-            
+          <div className="relative w-full max-w-[440px] aspect-[4/3] sm:aspect-square md:aspect-[4/3] lg:aspect-square rounded-[32px] glass-panel border border-white/10 overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
             {/* Soft inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-60 z-10 pointer-events-none" />
             
-            {/* Interactive/Floating SVG Printing Machine */}
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative z-10 w-full h-full flex flex-col justify-between items-center"
-            >
-              {/* Device Header */}
-              <div className="w-full flex justify-between items-center px-2">
-                <div className="flex space-x-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                </div>
-                <div className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[9px] font-mono text-gray-400">
-                  SMART-PRINT V.4
-                </div>
+            {/* Image element */}
+            <Image
+              src="/gallery/new-shop-front.jpeg"
+              alt="SMART TECH Namchi Shop Front"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority
+            />
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center z-20 bg-black/20 group-hover:bg-black/45 transition-colors duration-500">
+              <motion.div 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg shadow-primary/30 border border-white/20 transition-all duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+              >
+                <Play className="w-6 h-6 fill-white ml-1" />
+              </motion.div>
+              <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full glass-card border border-white/10 text-[9px] font-bold text-accent uppercase tracking-widest flex items-center gap-1.5 shadow-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+                Virtual Tour
               </div>
-
-              {/* Central Vector Illustration */}
-              <div className="w-full flex-1 flex items-center justify-center relative my-4">
-                {/* Laser / Scanner Line */}
-                <motion.div 
-                  animate={{
-                    top: ["20%", "80%", "20%"]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute left-1/12 right-1/12 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent z-20 shadow-[0_0_10px_#00C2FF]"
-                />
-
-                {/* Simulated Paper / Flex Media Output */}
-                <motion.div
-                  animate={{
-                    height: ["80px", "110px", "80px"]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-[35%] w-[160px] bg-gradient-to-b from-white to-gray-200 rounded-lg flex flex-col p-2.5 shadow-inner overflow-hidden border border-white/20"
-                >
-                  <div className="h-2 w-10 bg-primary/20 rounded mb-1" />
-                  <div className="h-1.5 w-full bg-gray-300 rounded mb-1" />
-                  <div className="h-1.5 w-5/6 bg-gray-300 rounded mb-1.5" />
-                  {/* Neon Color Palette print colors */}
-                  <div className="flex gap-1.5 mt-auto">
-                    <div className="w-3.5 h-3.5 rounded-sm bg-cyan-400" />
-                    <div className="w-3.5 h-3.5 rounded-sm bg-magenta-400 bg-pink-500" />
-                    <div className="w-3.5 h-3.5 rounded-sm bg-yellow-400" />
-                    <div className="w-3.5 h-3.5 rounded-sm bg-black" />
-                  </div>
-                </motion.div>
-
-                {/* Printing Carriage/Heads */}
-                <motion.div
-                  animate={{
-                    x: ["-30px", "30px", "-30px"]
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-[28%] w-[50px] h-[18px] bg-gradient-to-r from-gray-700 to-gray-800 rounded border border-white/20 z-10 flex items-center justify-around px-1"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
-                </motion.div>
-
-                {/* Base Support Frame */}
-                <div className="absolute top-[28%] w-[210px] h-[8px] bg-gray-800 rounded-full border border-white/10" />
-                <div className="absolute top-[68%] w-[210px] h-[8px] bg-gray-800 rounded-full border border-white/10" />
-
-                {/* Floating Tech Badges */}
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -left-4 top-[20%] p-2 rounded-xl glass-card flex items-center space-x-1.5 border border-white/10"
-                >
-                  <Cpu className="w-3.5 h-3.5 text-accent" />
-                  <span className="text-[9px] font-semibold text-gray-300">HQ PRINT</span>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -right-4 top-[50%] p-2 rounded-xl glass-card flex items-center space-x-1.5 border border-white/10"
-                >
-                  <Layers className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-[9px] font-semibold text-gray-300">CMYK+RGB</span>
-                </motion.div>
+            </div>
+            
+            {/* Overlay badge/text */}
+            <div className="absolute bottom-6 left-6 right-6 z-20 p-4 rounded-2xl glass-card border border-white/10 backdrop-blur-md flex justify-between items-center">
+              <div>
+                <h3 className="text-white text-xs font-bold font-heading tracking-wide uppercase">SMART TECH Namchi</h3>
+                <p className="text-gray-400 text-[10px] mt-0.5">Melli Road, Namchi, South Sikkim</p>
               </div>
-
-              {/* Status Bar */}
-              <div className="w-full flex items-center justify-between border-t border-white/5 pt-3 px-2 text-[10px] text-gray-400 font-medium">
-                <div className="flex items-center space-x-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                  <span>ONLINE READY</span>
-                </div>
-                <div className="text-accent">100% QUALITY</div>
+              <div className="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold text-emerald-400 flex items-center gap-1.5 uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Open
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Video Tour Modal */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-6"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-colors duration-300 z-[110]"
+              aria-label="Close video"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Modal Body */}
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative w-full max-w-4xl max-h-[85vh] aspect-[9/16] sm:aspect-video rounded-2xl border border-white/10 bg-bg-dark overflow-hidden shadow-2xl z-[105]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <video
+                src="/gallery/Virtual-Tour.mp4"
+                className="w-full h-full object-contain"
+                controls
+                autoPlay
+                playsInline
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -60,7 +60,7 @@ function Counter({ end, duration = 2000, suffix = "" }: { end: number; duration?
 const statsData = [
   { icon: Calendar, end: 9, suffix: "+", label: "Years Experience" },
   { icon: FolderCheck, end: 12000, suffix: "+", label: "Projects" },
-  { icon: Cpu, end: 12, suffix: "", label: "Services" },
+  { icon: Cpu, end: 16, suffix: "", label: "Services" },
   { icon: Users, end: 99, suffix: "%", label: "Customer Satisfaction" },
 ];
 

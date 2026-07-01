@@ -21,7 +21,11 @@ import {
   ArrowRight,
   X,
   MessageSquare,
-  CheckCircle2
+  CheckCircle2,
+  Lightbulb,
+  ShieldCheck,
+  Wind,
+  Car
 } from "lucide-react";
 import { fadeInUp, staggerContainer } from "../lib/variants";
 
@@ -143,6 +147,42 @@ const servicesList: ServiceItem[] = [
     applications: ["Football Club Team Jerseys", "School/College Athletic kits", "Corporate League Uniforms", "Marathon & Event singlet uniforms"],
     benefits: ["100% full dye-sublimation printing", "Lightweight moisture-wicking dry-fit mesh", "Colors never fade, peel, or crack", "Custom names and player numbers printed free"],
     whatsappTemplate: "Hello SMART TECH NAMCHI,\n\nI want to get custom Sublimation Jerseys for my team.",
+  },
+  {
+    icon: Receipt,
+    title: "Token Tax",
+    image: "/gallery/token-tax.webp",
+    description: "Hassle-free online vehicle token tax payment and renewal services for Sikkim transport vehicles. Fast receipt printing and digital Vahan record updates.",
+    applications: ["Private Car Token Tax Renewals", "Two-Wheeler Road Tax Payments", "Commercial Vehicle Token Tax Payments", "Official Vahan Tax Receipt Printing"],
+    benefits: ["Instant digital receipt generation & printout", "Direct updates to the Vahan system database", "Avoid late fees and transport department penalties", "Fast processing in under 5 minutes"],
+    whatsappTemplate: "Hello SMART TECH NAMCHI,\n\nI want to pay/renew Token Tax for my vehicle.",
+  },
+  {
+    icon: Wind,
+    title: "Car Pollution Testing",
+    image: "/gallery/pollution.jpeg",
+    description: "Authorized emission testing and certified vehicle pollution testing center. Real-time online upload to the government Vahan portal.",
+    applications: ["Private Car Emission Certification", "Commercial Vehicle Pollution Checks", "Authorized Green PUC Printouts", "Vahan Online Database Sync"],
+    benefits: ["Sikkim government-authorized testing center", "Instant digital green PUC certificate generation", "Fast calibration with quick checkout", "Accurate sensor-based gas analyzers"],
+    whatsappTemplate: "Hello SMART TECH NAMCHI,\n\nI want to inquire about Car Pollution Testing.",
+  },
+  {
+    icon: Lightbulb,
+    title: "2D & 3D LED Board Panelling",
+    image: "/gallery/led-display-board-panelling.webp",
+    description: "Sleek 2D and 3D LED backlit lettering, glow sign boards, and custom display panelling designed to maximize storefront visibility and branding.",
+    applications: ["Storefront 3D Acrylic Letters", "2D LED Backlit Signs", "Custom Neon & Glow Signboards", "Corporate Outdoor Board Panelling"],
+    benefits: ["High-efficiency weather-resistant LEDs", "Vibrant colors with uniform illumination", "Premium ACP/acrylic mounting panels", "Laser-cut letters for perfect geometry"],
+    whatsappTemplate: "Hello SMART TECH NAMCHI,\n\nI am interested in getting 2D/3D LED Display Board Panelling.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "2-Wheeler & 4-Wheeler Insurance",
+    image: "/gallery/insurance.png",
+    description: "Comprehensive and third-party insurance renewals for all two-wheeler bikes, scooters, and four-wheeler vehicles. Fast and digital checkout.",
+    applications: ["Two-Wheeler / Bike Insurance Policies", "Scooter & Moped Insurance Renewals", "Four-Wheeler / SUV & Jeep Coverage", "Hassle-free Online Policy Printing"],
+    benefits: ["Instant digital policy generation & printout", "Hassle-free digital document processing", "Affordable rates with multiple leading insurers", "Expert guidance on claim processes"],
+    whatsappTemplate: "Hello SMART TECH NAMCHI,\n\nI want to inquire about 2-Wheeler & 4-Wheeler Insurance.",
   },
 ];
 
