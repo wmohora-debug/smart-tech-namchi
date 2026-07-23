@@ -140,22 +140,43 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
-                if (window.location.hostname === 'localhost') {
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
                   navigator.serviceWorker.getRegistrations().then(function(registrations) {
                     for (let registration of registrations) {
-                      registration.unregister().then(function(unregistered) {
-                        if (unregistered) {
-                          console.log('Successfully unregistered active SW on localhost to prevent dev cache loop.');
-                        }
-                      });
+                      registration.unregister();
                     }
                   });
                 } else {
                   window.addEventListener('load', function() {
                     navigator.serviceWorker.register('/sw.js').then(function(reg) {
-                      console.log('SW Registered:', reg.scope);
+                      reg.update();
+
+                      if (reg.waiting) {
+                        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+                      }
+
+                      reg.addEventListener('updatefound', function() {
+                        var installingWorker = reg.installing;
+                        if (installingWorker) {
+                          installingWorker.addEventListener('statechange', function() {
+                            if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                              if (reg.waiting) {
+                                reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+                              }
+                            }
+                          });
+                        }
+                      });
                     }).catch(function(err) {
                       console.warn('SW Registration failed:', err);
+                    });
+
+                    var refreshing = false;
+                    navigator.serviceWorker.addEventListener('controllerchange', function() {
+                      if (!refreshing) {
+                        refreshing = true;
+                        window.location.reload();
+                      }
                     });
                   });
                 }
