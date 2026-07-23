@@ -166,11 +166,25 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm text-gray-400">
-                <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span>
+                <a
+                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-white transition-colors mt-0.5"
+                  title="Open location on Google Maps"
+                >
+                  <MapPin className="w-5 h-5 flex-shrink-0" />
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  title="Open location on Google Maps"
+                >
                   Melli Road, Near District Court, <br />
                   Namchi, South Sikkim, India 737126
-                </span>
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-sm text-gray-400">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />

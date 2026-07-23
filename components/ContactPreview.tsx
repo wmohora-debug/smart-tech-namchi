@@ -76,21 +76,48 @@ export default function ContactPreview() {
             {/* Card Address */}
             <motion.div
               variants={fadeInUp}
-              className="glass-card p-6 rounded-card border border-white/5 flex items-start space-x-4"
+              className="glass-card p-6 rounded-card border border-white/5 flex flex-col justify-between space-y-5"
             >
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent flex-shrink-0">
-                <MapPin className="w-5 h-5" />
+              <div className="flex items-start space-x-4">
+                <a
+                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all flex-shrink-0"
+                  title="Open exact location in Google Maps"
+                >
+                  <MapPin className="w-5 h-5" />
+                </a>
+                <div className="space-y-1 flex-1">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+                      Our Address
+                    </h3>
+                    <span className="text-[10px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 text-accent font-mono">MAP</span>
+                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-accent text-base font-medium leading-relaxed transition-colors block mt-1"
+                    title="Open exact location in Google Maps"
+                  >
+                    Smart Tech Namchi, Melli Road, <br />
+                    Near District Court, Namchi, <br />
+                    South Sikkim, India 737126
+                  </a>
+                </div>
               </div>
-              <div className="space-y-1">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
-                  Our Address
-                </h3>
-                <p className="text-white text-base font-medium leading-relaxed">
-                  Smart Tech Namchi, Melli Road, <br />
-                  Near District Court, Namchi, <br />
-                  South Sikkim, India 737126
-                </p>
-              </div>
+
+              <a
+                href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary/10 hover:bg-primary/20 text-accent hover:text-white font-semibold text-xs transition-all duration-300 border border-primary/20 hover:border-primary/40 group cursor-pointer"
+              >
+                <MapPin className="w-4 h-4 mr-2 text-accent group-hover:scale-110 transition-transform" />
+                Get Directions
+              </a>
             </motion.div>
 
             {/* Card Contacts */}

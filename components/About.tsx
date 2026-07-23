@@ -107,9 +107,15 @@ export default function About() {
               <span className="text-3xl font-heading font-black text-accent block mb-1">
                 Est. 2017
               </span>
-              <span className="text-xs font-semibold text-gray-300 uppercase tracking-widest block">
+              <a
+                href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-gray-300 hover:text-accent uppercase tracking-widest block transition-colors"
+                title="View location on Google Maps"
+              >
                 Namchi, Sikkim
-              </span>
+              </a>
             </motion.div>
           </motion.div>
 
