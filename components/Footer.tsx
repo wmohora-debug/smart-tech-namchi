@@ -167,7 +167,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm text-gray-400">
                 <a
-                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:text-white transition-colors mt-0.5"
@@ -176,7 +176,7 @@ export default function Footer() {
                   <MapPin className="w-5 h-5 flex-shrink-0" />
                 </a>
                 <a
-                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"

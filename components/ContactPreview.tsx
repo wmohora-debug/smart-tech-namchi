@@ -80,7 +80,7 @@ export default function ContactPreview() {
             >
               <div className="flex items-start space-x-4">
                 <a
-                  href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                  href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all flex-shrink-0"
@@ -96,7 +96,7 @@ export default function ContactPreview() {
                     <span className="text-[10px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 text-accent font-mono">MAP</span>
                   </div>
                   <a
-                    href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                    href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-accent text-base font-medium leading-relaxed transition-colors block mt-1"
@@ -110,7 +110,7 @@ export default function ContactPreview() {
               </div>
 
               <a
-                href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary/10 hover:bg-primary/20 text-accent hover:text-white font-semibold text-xs transition-all duration-300 border border-primary/20 hover:border-primary/40 group cursor-pointer"

@@ -108,7 +108,7 @@ export default function About() {
                 Est. 2017
               </span>
               <a
-                href="https://maps.app.goo.gl/vTXBy5oAckSeXJBP9"
+                href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-semibold text-gray-300 hover:text-accent uppercase tracking-widest block transition-colors"

@@ -54,7 +54,7 @@ export default function RootLayout({
     "image": "https://smarttechnamchi.com/gallery/Shop-front.jpeg",
     "@id": "https://smarttechnamchi.com/#localbusiness",
     "url": "https://smarttechnamchi.com",
-    "hasMap": "https://maps.app.goo.gl/vTXBy5oAckSeXJBP9",
+    "hasMap": "https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw",
     "telephone": "+917719330915",
     "priceRange": "$$",
     "address": {
