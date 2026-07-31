@@ -35,11 +35,12 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
-    const element = document.querySelector(href);
+    const targetId = href.replace(/^#/, "");
+    const element = document.getElementById(targetId) || document.querySelector(href);
     if (element) {
-      const offset = 80; // height of navbar
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - offset;
+      const navbarOffset = 75;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarOffset;
 
       window.scrollTo({
         top: offsetPosition,
