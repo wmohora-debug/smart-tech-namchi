@@ -28,7 +28,7 @@ const categories = [
     title: "Sports Accessories & Equipment",
     description: "Complete team kits including personalized training bibs, backpacks, professional shinguards, socks, and custom tournament balls. Complete outfit cohesion for your squad.",
     features: ["Durable water-resistant fabrics", "Custom club crest printing", "Ergonomic designs"],
-    images: ["/gallery/Shop-front.jpeg"],
+    images: ["/gallery/shop.jpeg"],
   },
 ];
 

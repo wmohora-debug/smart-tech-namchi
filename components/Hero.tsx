@@ -306,7 +306,7 @@ export default function Hero() {
               onClick={(e) => e.stopPropagation()}
             >
               <video
-                src="/gallery/Virtual-Tour.mp4"
+                src="/gallery/Virtual%20Tour.mp4"
                 className="w-full h-full object-contain"
                 controls
                 autoPlay

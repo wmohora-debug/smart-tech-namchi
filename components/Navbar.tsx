@@ -35,17 +35,23 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
+
     const targetId = href.replace(/^#/, "");
     const element = document.getElementById(targetId) || document.querySelector(href);
-    if (element) {
-      const navbarOffset = 75;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+    if (element) {
+      setTimeout(() => {
+        const navbarOffset = 70;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = Math.max(0, elementPosition - navbarOffset);
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
     }
   };
 

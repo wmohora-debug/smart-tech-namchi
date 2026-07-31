@@ -87,7 +87,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
               
               <Image
-                src="/gallery/Shop-front.jpeg"
+                src="/gallery/shop.jpeg"
                 alt="Smart Tech Namchi storefront in Melli Road"
                 fill
                 sizes="(max-w-768px) 100vw, 40vw"
