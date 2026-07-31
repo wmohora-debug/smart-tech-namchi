@@ -50,16 +50,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden md:block ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isOpen
-          ? "glass-navbar py-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]"
-          : "bg-transparent py-6"
+          ? "glass-navbar py-3 sm:py-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)]"
+          : "bg-transparent py-4 sm:py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
         {/* Logo and Name */}
-        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-3 group">
-          <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 border border-white/10">
+        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-2.5 sm:space-x-3 group">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 border border-white/10 flex-shrink-0">
             <Image
               src="/gallery/logo.png"
               alt="SMART TECH Logo"
@@ -69,10 +69,10 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-white font-heading font-bold text-lg tracking-wider leading-none">
+            <span className="text-white font-heading font-bold text-base sm:text-lg tracking-wider leading-none select-none">
               SMART TECH
             </span>
-            <span className="text-accent font-heading font-medium text-xs tracking-widest mt-1">
+            <span className="text-accent font-heading font-medium text-[10px] sm:text-xs tracking-widest mt-0.5 sm:mt-1 select-none">
               NAMCHI
             </span>
           </div>
@@ -109,7 +109,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white transition-colors"
+          className="md:hidden flex items-center justify-center p-2.5 min-w-[42px] min-h-[42px] rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white transition-colors active:scale-95"
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -124,28 +124,28 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-bg-dark/95 border-b border-white/10 absolute top-full left-0 right-0 overflow-hidden shadow-2xl backdrop-blur-xl"
+            className="md:hidden bg-bg-dark/95 border-b border-white/10 absolute top-full left-0 right-0 overflow-hidden shadow-2xl backdrop-blur-xl max-h-[calc(100vh-70px)] overflow-y-auto"
           >
-            <div className="px-6 py-6 flex flex-col space-y-3">
+            <div className="px-5 py-5 flex flex-col space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="py-3 text-base text-gray-300 font-semibold hover:text-white border-b border-white/5 hover:border-white/10 hover:pl-2 transition-all duration-300 block"
+                  className="py-3 px-1 text-base text-gray-300 font-semibold hover:text-white border-b border-white/5 hover:border-white/10 hover:pl-2 transition-all duration-300 block whitespace-nowrap"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4 flex flex-col space-y-3">
+              <div className="pt-3 flex flex-col space-y-3">
                 <a
                   href="https://wa.me/917719330915?text=Hello%20Smart%20Tech%20Namchi,%20I%20would%20like%20to%20inquire%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center py-3.5 rounded-btn bg-primary text-white font-semibold text-sm transition-all hover:bg-primary/90 shadow-lg shadow-primary/20"
+                  className="w-full inline-flex items-center justify-center py-3 rounded-btn bg-primary text-white font-semibold text-sm transition-all hover:bg-primary/90 shadow-lg shadow-primary/20 active:scale-95"
                 >
                   <MessageSquare className="w-4 h-4 mr-2" />
-                  WhatsApp
+                  WhatsApp Now
                 </a>
               </div>
             </div>

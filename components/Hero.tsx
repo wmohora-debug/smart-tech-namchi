@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Phone, ArrowRight, Sparkles, Layers, Cpu, Play, X } from "lucide-react";
+import { MessageSquare, Phone, ArrowRight, Sparkles, Layers, Cpu, Play, X, MapPin } from "lucide-react";
 import Image from "next/image";
 import { fadeInUp, staggerContainer } from "../lib/variants";
 
@@ -51,7 +51,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-dark pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-dark pt-20 sm:pt-24 lg:pt-20 pb-12 sm:pb-16 lg:pb-0"
     >
       {/* Background Soft Grid Effect */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 z-0 pointer-events-none" />
@@ -120,20 +120,20 @@ export default function Hero() {
         className="absolute bottom-[20%] left-[5%] w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-accent/5 backdrop-blur-lg border border-white/5 pointer-events-none hidden md:block"
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 items-center py-8 sm:py-12 lg:py-24">
         {/* Left Side Content */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left"
+          className="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-6 lg:space-y-8 text-left"
         >
           {/* Logo Fades In */}
           <motion.div
             variants={fadeInUp}
             className="flex items-center space-x-3 group"
           >
-            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-lg shadow-primary/25 border border-white/10 group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden shadow-lg shadow-primary/25 border border-white/10 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
               <Image
                 src="/gallery/logo.png"
                 alt="SMART TECH Logo"
@@ -151,17 +151,17 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full w-fit">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-xs font-semibold text-accent uppercase tracking-widest">
+          <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full w-fit max-w-full">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent flex-shrink-0" />
+            <span className="text-[11px] sm:text-xs font-semibold text-accent uppercase tracking-widest whitespace-nowrap">
               NAMCHI'S PREMIER HUB
             </span>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <motion.h1
               variants={fadeInUp}
-              className="text-5xl md:text-6xl lg:text-7xl font-heading font-black tracking-tight leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black tracking-tight leading-[1.15] sm:leading-[1.1]"
             >
               SMART TECH <br />
               <span className="gradient-blue-text">NAMCHI</span>
@@ -169,14 +169,14 @@ export default function Hero() {
             
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl font-heading font-semibold text-gray-200 tracking-wide"
+              className="text-lg sm:text-xl md:text-2xl font-heading font-semibold text-gray-200 tracking-wide"
             >
               The Ultimate Printing Solution
             </motion.p>
 
             <motion.p
               variants={fadeInUp}
-              className="text-gray-400 text-base md:text-lg max-w-xl leading-relaxed font-normal"
+              className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed font-normal"
             >
               Experience high-fidelity print solutions engineered with cutting-edge technology. From grand-scale flex printing to precise digital design, custom framing, jerseys, and trophies, we bring your vision to life with pixel-perfect accuracy and luxury finish.
             </motion.p>
@@ -185,11 +185,11 @@ export default function Hero() {
           {/* Action Buttons */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap gap-4 items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center w-full sm:w-auto"
           >
             <button
               onClick={handleScrollToServices}
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-btn bg-primary hover:bg-primary/95 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/45 hover:-translate-y-0.5 active:scale-95 border border-white/10 group cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 rounded-btn bg-primary hover:bg-primary/95 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/45 hover:-translate-y-0.5 active:scale-95 border border-white/10 group cursor-pointer"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -199,7 +199,7 @@ export default function Hero() {
               href="https://wa.me/917719330915?text=Hello%20Smart%20Tech%20Namchi,%20I%20would%20like%20to%20inquire%20about%20your%20printing%20services."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-btn glass-panel hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,194,255,0.2)] text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 rounded-btn glass-panel hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,194,255,0.2)] text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
             >
               <MessageSquare className="w-4 h-4 mr-2 text-accent" />
               WhatsApp
@@ -207,10 +207,20 @@ export default function Hero() {
 
             <a
               href="tel:+917719330915"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-btn bg-white/5 hover:bg-white/10 hover:border-white/10 text-white font-semibold text-sm transition-all duration-300 border border-white/5 hover:-translate-y-0.5 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 rounded-btn bg-white/5 hover:bg-white/10 hover:border-white/10 text-white font-semibold text-sm transition-all duration-300 border border-white/5 hover:-translate-y-0.5 active:scale-95"
             >
               <Phone className="w-4 h-4 mr-2 text-gray-400" />
               Call Now
+            </a>
+
+            <a
+              href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 rounded-btn bg-primary/10 hover:bg-primary/20 text-accent hover:text-white font-semibold text-sm transition-all duration-300 border border-primary/20 hover:border-primary/40 hover:-translate-y-0.5 active:scale-95"
+            >
+              <MapPin className="w-4 h-4 mr-2 text-accent" />
+              Get Directions
             </a>
           </motion.div>
         </motion.div>
@@ -220,11 +230,11 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex justify-center items-center relative cursor-pointer group"
+          className="lg:col-span-5 flex justify-center items-center relative cursor-pointer group w-full"
           onClick={() => setIsVideoOpen(true)}
         >
           {/* Main Visual Container */}
-          <div className="relative w-full max-w-[440px] aspect-[4/3] sm:aspect-square md:aspect-[4/3] lg:aspect-square rounded-[32px] glass-panel border border-white/10 overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
+          <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[440px] aspect-[4/3] sm:aspect-square md:aspect-[4/3] lg:aspect-square rounded-2xl sm:rounded-[32px] glass-panel border border-white/10 overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)]">
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-60 z-10 pointer-events-none" />
             
@@ -242,23 +252,23 @@ export default function Hero() {
               <motion.div 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg shadow-primary/30 border border-white/20 transition-all duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg shadow-primary/30 border border-white/20 transition-all duration-300 opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
               >
-                <Play className="w-6 h-6 fill-white ml-1" />
+                <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-white ml-0.5 sm:ml-1" />
               </motion.div>
-              <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full glass-card border border-white/10 text-[9px] font-bold text-accent uppercase tracking-widest flex items-center gap-1.5 shadow-md">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full glass-card border border-white/10 text-[9px] font-bold text-accent uppercase tracking-widest flex items-center gap-1.5 shadow-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
                 Virtual Tour
               </div>
             </div>
             
             {/* Overlay badge/text */}
-            <div className="absolute bottom-6 left-6 right-6 z-20 p-4 rounded-2xl glass-card border border-white/10 backdrop-blur-md flex justify-between items-center">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 p-3 sm:p-4 rounded-xl sm:rounded-2xl glass-card border border-white/10 backdrop-blur-md flex justify-between items-center">
               <div>
-                <h3 className="text-white text-xs font-bold font-heading tracking-wide uppercase">SMART TECH Namchi</h3>
-                <p className="text-gray-400 text-[10px] mt-0.5">Melli Road, Namchi, South Sikkim</p>
+                <h3 className="text-white text-[11px] sm:text-xs font-bold font-heading tracking-wide uppercase">SMART TECH Namchi</h3>
+                <p className="text-gray-400 text-[9px] sm:text-[10px] mt-0.5">Melli Road, Namchi, South Sikkim</p>
               </div>
-              <div className="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold text-emerald-400 flex items-center gap-1.5 uppercase">
+              <div className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold text-emerald-400 flex items-center gap-1.5 uppercase flex-shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Open
               </div>

@@ -58,21 +58,21 @@ export default function Testimonials() {
   }, [isHovered, nextSlide]);
 
   return (
-    <section id="testimonials" className="relative py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
+    <section id="testimonials" className="relative py-14 sm:py-20 lg:py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
       {/* Glow Backdrops */}
       <div className="gradient-glow w-[350px] h-[350px] bg-accent/5 top-[10%] left-[-5%] animate-pulse-slow" />
       <div className="gradient-glow w-[350px] h-[350px] bg-primary/5 bottom-[10%] right-[-5%] animate-pulse-slow" />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-4"
+            className="inline-block text-[11px] sm:text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4"
           >
             CLIENT REVIEWS
           </motion.div>
@@ -81,7 +81,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-heading font-extrabold tracking-tight"
+            className="text-2xl sm:text-4xl font-heading font-extrabold tracking-tight leading-tight"
           >
             Trusted by the <span className="gradient-blue-text">Community</span>
           </motion.h2>
@@ -89,7 +89,7 @@ export default function Testimonials() {
 
         {/* Carousel Card Area */}
         <div 
-          className="relative min-h-[300px] flex items-center justify-center"
+          className="relative min-h-[260px] sm:min-h-[300px] flex items-center justify-center"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -100,30 +100,30 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="glass-panel p-8 md:p-10 rounded-card border border-white/5 w-full relative flex flex-col md:flex-row items-start gap-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)]"
+              className="glass-panel p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-card border border-white/5 w-full relative flex flex-col md:flex-row items-start gap-4 sm:gap-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)]"
             >
               {/* Quote Icon Background */}
-              <Quote className="absolute top-6 right-8 w-16 h-16 text-white/5 pointer-events-none" />
+              <Quote className="absolute top-4 right-4 sm:top-6 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 text-white/5 pointer-events-none" />
 
-              <div className="flex-1 space-y-4">
+              <div className="flex-1 space-y-3 sm:space-y-4">
                 {/* Star rating */}
                 <div className="flex items-center space-x-1">
                   {[...Array(testimonialsData[activeIndex].rating)].map((_, i) => (
-                    <Star key={i} className="w-4.5 h-4.5 fill-accent text-accent" />
+                    <Star key={i} className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-accent text-accent" />
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-300 text-base md:text-lg leading-relaxed font-medium italic">
+                <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-medium italic">
                   "{testimonialsData[activeIndex].text}"
                 </p>
 
                 {/* Author Info */}
                 <div>
-                  <h4 className="text-white font-heading font-bold text-base tracking-wide">
+                  <h4 className="text-white font-heading font-bold text-sm sm:text-base tracking-wide">
                     {testimonialsData[activeIndex].name}
                   </h4>
-                  <p className="text-accent text-xs font-semibold uppercase tracking-wider mt-0.5">
+                  <p className="text-accent text-[11px] sm:text-xs font-semibold uppercase tracking-wider mt-0.5">
                     {testimonialsData[activeIndex].role}
                   </p>
                 </div>
@@ -134,23 +134,23 @@ export default function Testimonials() {
           {/* Navigation Controls */}
           <button
             onClick={prevSlide}
-            className="absolute -left-4 md:-left-16 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-colors cursor-pointer z-10"
+            className="absolute -left-2 sm:-left-6 md:-left-16 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 sm:bg-white/5 hover:bg-white/10 border border-white/15 sm:border-white/10 flex items-center justify-center text-white transition-colors cursor-pointer z-10 active:scale-95"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute -right-4 md:-right-16 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-colors cursor-pointer z-10"
+            className="absolute -right-2 sm:-right-6 md:-right-16 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 sm:bg-white/5 hover:bg-white/10 border border-white/15 sm:border-white/10 flex items-center justify-center text-white transition-colors cursor-pointer z-10 active:scale-95"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Bullet Pagination Indicators */}
-        <div className="flex justify-center items-center space-x-2 mt-8">
+        <div className="flex justify-center items-center space-x-2 mt-6 sm:mt-8">
           {testimonialsData.map((_, idx) => (
             <button
               key={idx}

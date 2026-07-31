@@ -66,13 +66,13 @@ const statsData = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
+    <section id="about" className="relative py-14 sm:py-20 lg:py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
       {/* Background decoration */}
       <div className="gradient-glow w-[400px] h-[400px] bg-primary/5 top-[30%] left-[-10%] animate-pulse-slow" />
       <div className="absolute top-[10%] right-[5%] w-72 h-72 rounded-full border border-white/2 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-12 items-center">
           
           {/* Left Side: Image Showcase with Overlay Badge */}
           <motion.div
@@ -80,7 +80,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 relative w-full max-w-[380px] sm:max-w-none mx-auto lg:mx-0"
           >
             <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] rounded-card overflow-hidden border border-white/10 group shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)]">
               {/* Overlay Gradient */}
@@ -102,16 +102,16 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="absolute -bottom-6 -right-6 md:right-4 p-6 rounded-card glass-panel border border-white/10 shadow-2xl max-w-[200px] z-20 text-center"
+              className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-6 md:right-4 p-4 sm:p-6 rounded-xl sm:rounded-card glass-panel border border-white/10 shadow-2xl max-w-[160px] sm:max-w-[200px] z-20 text-center"
             >
-              <span className="text-3xl font-heading font-black text-accent block mb-1">
+              <span className="text-2xl sm:text-3xl font-heading font-black text-accent block mb-1">
                 Est. 2017
               </span>
               <a
                 href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-gray-300 hover:text-accent uppercase tracking-widest block transition-colors"
+                className="text-[10px] sm:text-xs font-semibold text-gray-300 hover:text-accent uppercase tracking-widest block transition-colors"
                 title="View location on Google Maps"
               >
                 Namchi, Sikkim
@@ -120,14 +120,14 @@ export default function About() {
           </motion.div>
 
           {/* Right Side: Copy & Stats */}
-          <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
-            <div className="space-y-4">
+          <div className="lg:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-8">
+            <div className="space-y-3 sm:space-y-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
-                className="inline-block text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full"
+                className="inline-block text-[11px] sm:text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full"
               >
                 ABOUT OUR COMPANY
               </motion.div>
@@ -136,7 +136,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight"
+                className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight leading-tight"
               >
                 Pioneering Print & Sports Sublimation in <span className="gradient-blue-text">Namchi</span>
               </motion.h2>
@@ -145,7 +145,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-gray-400 text-base md:text-lg leading-relaxed mt-4"
+                className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed mt-2 sm:mt-4"
               >
                 Welcome to SMART TECH NAMCHI, South Sikkim's premier destination for high-fidelity digital printing, flex banner production, and custom athletic wear. Conveniently located near the District Court on Melli Road, we serve businesses, schools, tournaments, and local communities with precise craftsmanship.
               </motion.p>
@@ -154,7 +154,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-gray-400 text-sm leading-relaxed"
+                className="text-gray-400 text-xs sm:text-sm leading-relaxed"
               >
                 Our modern print studio integrates creative design with advanced mechanical production. We specialize in producing premium PVC ID cards, custom trophies, professional certificates, photo framing, spiral binding, library hard binding, invoice bill books, and customized business stationery. Guided by an absolute commitment to quality and customer satisfaction, we ensure every project meets international standards.
               </motion.p>
@@ -166,7 +166,7 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
             >
               {[
                 "Modern printing technology",
@@ -177,9 +177,9 @@ export default function About() {
                 <motion.div
                   key={value}
                   variants={fadeInUp}
-                  className="flex items-center space-x-3 text-sm text-gray-300"
+                  className="flex items-center space-x-2.5 sm:space-x-3 text-xs sm:text-sm text-gray-300"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                  <CheckCircle2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
                   <span>{value}</span>
                 </motion.div>
               ))}
@@ -191,7 +191,7 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/5"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-5 sm:pt-6 border-t border-white/5"
             >
               {statsData.map((stat) => {
                 const IconComp = stat.icon;
@@ -199,13 +199,13 @@ export default function About() {
                   <motion.div
                     key={stat.label}
                     variants={fadeInUp}
-                    className="p-4 rounded-xl bg-card-dark/40 border border-white/5 hover:border-white/10 transition-colors duration-300"
+                    className="p-3 sm:p-4 rounded-xl bg-card-dark/40 border border-white/5 hover:border-white/10 transition-colors duration-300"
                   >
-                    <IconComp className="w-5 h-5 text-accent mb-2 opacity-80" />
-                    <span className="text-2xl sm:text-3xl font-heading font-extrabold text-white block tracking-tight">
+                    <IconComp className="w-4 h-4 sm:w-5 sm:h-5 text-accent mb-1.5 sm:mb-2 opacity-80" />
+                    <span className="text-xl sm:text-3xl font-heading font-extrabold text-white block tracking-tight">
                       <Counter end={stat.end} suffix={stat.suffix} />
                     </span>
-                    <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-1 block">
+                    <span className="text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-1 block">
                       {stat.label}
                     </span>
                   </motion.div>

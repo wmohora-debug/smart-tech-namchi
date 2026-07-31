@@ -42,21 +42,21 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="relative py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
+    <section id="why-choose-us" className="relative py-14 sm:py-20 lg:py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
       {/* Background Orbs */}
       <div className="gradient-glow w-[350px] h-[350px] bg-primary/10 top-[20%] right-[-10%] animate-pulse-slow" />
       <div className="gradient-glow w-[350px] h-[350px] bg-accent/10 bottom-[10%] left-[-15%] animate-pulse-slow" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-4"
+            className="inline-block text-[11px] sm:text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4"
           >
             OUR DISTINCTIONS
           </motion.div>
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight"
+            className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight leading-tight"
           >
             Why Industry Leaders Choose <span className="gradient-blue-text">Smart Tech</span>
           </motion.h2>
@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 mt-4 text-base md:text-lg leading-relaxed"
+            className="text-gray-400 mt-2.5 sm:mt-4 text-sm sm:text-base md:text-lg leading-relaxed"
           >
             We merge design sophistication with mechanical excellence to deliver results that elevate your business.
           </motion.p>
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-center"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 justify-center"
         >
           {features.map((feat) => {
             const IconComponent = feat.icon;
@@ -95,25 +95,25 @@ export default function WhyChooseUs() {
               <motion.div
                 key={feat.title}
                 variants={fadeInUp}
-                className="glass-card p-8 rounded-card border border-white/5 relative group overflow-hidden"
+                className="glass-card p-5 sm:p-8 rounded-2xl sm:rounded-card border border-white/5 relative group overflow-hidden flex flex-col justify-center"
               >
                 {/* Glowing Card Border Top Hover effect */}
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Visual Icon Header */}
-                <div className="mb-6 relative">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-300">
-                    <IconComponent className="w-6 h-6 text-accent group-hover:text-primary transition-colors duration-300" />
+                <div className="mb-4 sm:mb-6 relative">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-300 flex-shrink-0">
+                    <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-accent group-hover:text-primary transition-colors duration-300" />
                   </div>
                   {/* Subtle Background Glow behind icon */}
                   <div className="absolute inset-0 bg-primary/20 rounded-xl filter blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-heading font-semibold text-white mb-3 tracking-wide group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-base sm:text-[19px] lg:text-xl font-heading font-semibold text-white mb-2 sm:mb-3 tracking-wide group-hover:text-accent transition-colors duration-300">
                   {feat.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed font-normal">
                   {feat.description}
                 </p>
               </motion.div>

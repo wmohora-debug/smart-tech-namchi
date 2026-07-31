@@ -29,15 +29,15 @@ export default function FloatingButtons() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.8 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-6 right-6 z-40 flex flex-col md:hidden space-y-3"
+          className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex flex-col md:hidden space-y-3 pb-[env(safe-area-inset-bottom)]"
         >
           {/* Phone Button */}
           <a
             href="tel:+917719330915"
-            className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg border border-white/10 hover:bg-primary/90 active:scale-95 transition-all"
+            className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-primary text-white flex items-center justify-center shadow-xl border border-white/15 hover:bg-primary/90 active:scale-95 transition-all"
             aria-label="Call Now"
           >
-            <Phone className="w-5 h-5" />
+            <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
           </a>
 
           {/* WhatsApp Button */}
@@ -45,10 +45,10 @@ export default function FloatingButtons() {
             href="https://wa.me/917719330915?text=Hello%20Smart%20Tech%20Namchi,%20I%20would%20like%20to%20inquire%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg border border-white/10 hover:bg-emerald-600 active:scale-95 transition-all"
+            className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xl border border-white/15 hover:bg-emerald-600 active:scale-95 transition-all"
             aria-label="Chat on WhatsApp"
           >
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
           </a>
         </motion.div>
       )}

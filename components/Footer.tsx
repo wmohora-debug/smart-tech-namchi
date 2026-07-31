@@ -58,19 +58,19 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-bg-dark border-t border-white/5 pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-bg-dark border-t border-white/5 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 overflow-hidden">
       {/* Background Soft Orbs */}
       <div className="absolute bottom-0 right-[20%] w-80 h-80 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pb-10 sm:pb-16 border-b border-white/5">
           
           {/* Col 1: Brand Profile */}
-          <div className="lg:col-span-4 space-y-6">
-            <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-3 group">
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 border border-white/10">
+          <div className="lg:col-span-4 space-y-4 sm:space-y-6">
+            <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-2.5 sm:space-x-3 group">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 border border-white/10 flex-shrink-0">
                 <Image
                   src="/gallery/logo.png"
                   alt="SMART TECH Logo"
@@ -79,19 +79,19 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-heading font-bold text-lg tracking-wider leading-none">
+                <span className="text-white font-heading font-bold text-base sm:text-lg tracking-wider leading-none select-none">
                   SMART TECH
                 </span>
-                <span className="text-accent font-heading font-medium text-xs tracking-widest mt-1">
+                <span className="text-accent font-heading font-medium text-[10px] sm:text-xs tracking-widest mt-0.5 sm:mt-1 select-none">
                   NAMCHI
                 </span>
               </div>
             </a>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               Namchi's leading hub for professional printing and digital product sublimations. Empowering businesses and sports teams with precision execution and premium craftsmanship.
             </p>
             {/* Social Icons */}
-            <div className="flex space-x-3.5 pt-2">
+            <div className="flex space-x-3 pt-1 sm:pt-2">
               {[
                 { icon: InstagramIcon, href: "https://www.instagram.com/smart_tech_namchi?igsh=aXl5YmdxaTgxajVq" },
               ].map((social, idx) => {
@@ -102,7 +102,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all duration-300"
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 active:scale-95"
                   >
                     <IconComp className="w-4.5 h-4.5" />
                   </a>
@@ -112,11 +112,11 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="lg:col-span-2 space-y-5">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+          <div className="lg:col-span-2 space-y-3.5 sm:space-y-5">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {[
                 { label: "Home", href: "#home" },
                 { label: "About Us", href: "#about" },
@@ -129,7 +129,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-200 block py-0.5"
                   >
                     {link.label}
                   </a>
@@ -139,11 +139,11 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Services Summary */}
-          <div className="lg:col-span-3 space-y-5">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-3.5 sm:space-y-5">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">
               Core Expertise
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {[
                 "Large Format Flex Printing",
                 "High-Speed Digital Printing",
@@ -152,7 +152,7 @@ export default function Footer() {
                 "Laser Engraved Trophies",
                 "PVC Identity Cards",
               ].map((service) => (
-                <li key={service} className="text-sm text-gray-400">
+                <li key={service} className="text-xs sm:text-sm text-gray-400">
                   {service}
                 </li>
               ))}
@@ -160,12 +160,12 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Corporate Info */}
-          <div className="lg:col-span-3 space-y-5">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-3.5 sm:space-y-5">
+            <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">
               Contact Info
             </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-sm text-gray-400">
+            <ul className="space-y-3 sm:space-y-4">
+              <li className="flex items-start space-x-3 text-xs sm:text-sm text-gray-400">
                 <a
                   href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                   target="_blank"
@@ -173,33 +173,33 @@ export default function Footer() {
                   className="text-accent hover:text-white transition-colors mt-0.5"
                   title="Open location on Google Maps"
                 >
-                  <MapPin className="w-5 h-5 flex-shrink-0" />
+                  <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5 flex-shrink-0" />
                 </a>
                 <a
                   href="https://maps.app.goo.gl/CGAf2muTyxyZufX48?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors leading-relaxed"
                   title="Open location on Google Maps"
                 >
                   Melli Road, Near District Court, <br />
                   Namchi, South Sikkim, India 737126
                 </a>
               </li>
-              <li className="flex items-start space-x-3 text-sm text-gray-400">
+              <li className="flex items-start space-x-3 text-xs sm:text-sm text-gray-400">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col space-y-1">
-                  <a href="tel:+917719330915" className="hover:text-white transition-colors">
+                  <a href="tel:+917719330915" className="hover:text-white transition-colors font-medium">
                     +91 77193 30915
                   </a>
-                  <span className="text-[11px] text-gray-500 font-mono tracking-wider pt-0.5">ADDITIONAL NUMBERS:</span>
+                  <span className="text-[10px] text-gray-500 font-mono tracking-wider pt-0.5">ADDITIONAL NUMBERS:</span>
                   <span className="text-gray-400 select-all">8514919701</span>
                   <span className="text-gray-400 select-all">7364843867</span>
                 </div>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-xs sm:text-sm text-gray-400">
                 <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                <a href="mailto:Sachinlimbu2000@gmail.com" className="hover:text-white transition-colors">
+                <a href="mailto:Sachinlimbu2000@gmail.com" className="hover:text-white transition-colors truncate">
                   Sachinlimbu2000@gmail.com
                 </a>
               </li>
@@ -209,19 +209,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-xs text-gray-500 font-medium">
+        <div className="pt-8 sm:pt-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
+          <div className="text-[11px] sm:text-xs text-gray-500 font-medium leading-relaxed">
             &copy; {new Date().getFullYear()} Smart Tech Namchi. All rights reserved. Designed with precision.
           </div>
           
-          <div className="flex items-center space-x-8 text-xs text-gray-500 font-medium">
+          <div className="flex items-center space-x-6 sm:space-x-8 text-[11px] sm:text-xs text-gray-500 font-medium">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             
             {/* Scroll to Top */}
             <button
               onClick={handleScrollToTop}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 cursor-pointer"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 cursor-pointer active:scale-95 flex-shrink-0"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

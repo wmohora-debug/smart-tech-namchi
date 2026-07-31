@@ -218,21 +218,21 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="relative py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
+    <section id="services" className="relative py-14 sm:py-20 lg:py-24 bg-bg-dark border-t border-white/5 overflow-hidden">
       {/* Background Elements */}
       <div className="gradient-glow w-[500px] h-[500px] bg-accent/5 top-[10%] left-[-15%] animate-pulse-slow" />
       <div className="gradient-glow w-[500px] h-[500px] bg-primary/5 bottom-[10%] right-[-15%] animate-pulse-slow" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full mb-4"
+            className="inline-block text-[11px] sm:text-xs font-semibold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4"
           >
             OUR PORTFOLIO
           </motion.div>
@@ -241,7 +241,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight"
+            className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight leading-tight"
           >
             Engineering Premium <span className="gradient-blue-text">Print & Product Solutions</span>
           </motion.h2>
@@ -250,7 +250,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 mt-4 text-base md:text-lg leading-relaxed"
+            className="text-gray-400 mt-3 sm:mt-4 text-sm sm:text-base md:text-lg leading-relaxed"
           >
             Discover our comprehensive spectrum of services, refined through precision engineering and premium materials.
           </motion.p>
@@ -262,7 +262,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
         >
           {servicesList.map((service) => {
             const IconComponent = service.icon;
@@ -272,14 +272,14 @@ export default function Services() {
                 key={service.title}
                 variants={fadeInUp}
                 onClick={() => setActiveService(service)}
-                className="glass-card p-6 rounded-card border border-white/5 relative group flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-card border border-white/5 relative group flex flex-col justify-between overflow-hidden cursor-pointer h-full"
               >
                 {/* Accent Top Border Glow on Hover */}
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div>
                   {/* Card Visual Banner Image */}
-                  <div className="relative w-full h-44 rounded-xl overflow-hidden mb-6 border border-white/5 group-hover:border-white/10 transition-colors">
+                  <div className="relative w-full h-36 sm:h-44 rounded-xl overflow-hidden mb-4 sm:mb-6 border border-white/5 group-hover:border-white/10 transition-colors">
                     <Image
                       src={service.image}
                       alt={`${service.title} illustration`}
@@ -293,26 +293,26 @@ export default function Services() {
                   </div>
 
                   {/* Icon Header */}
-                  <div className="mb-4 relative flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-300">
-                      <IconComponent className="w-5 h-5 text-accent group-hover:text-primary transition-colors duration-300" />
+                  <div className="mb-3 sm:mb-4 relative flex items-center gap-2.5 sm:gap-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-300 flex-shrink-0">
+                      <IconComponent className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-accent group-hover:text-primary transition-colors duration-300" />
                     </div>
                     {/* Shadow Glow behind icon on hover */}
                     <div className="absolute inset-0 bg-primary/10 rounded-xl filter blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none" />
                     
-                    <h3 className="text-lg font-heading font-semibold text-white tracking-wide group-hover:text-accent transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-heading font-semibold text-white tracking-wide group-hover:text-accent transition-colors duration-300">
                       {service.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Read More / Action Prompt */}
-                <div className="flex items-center text-xs font-semibold text-gray-400 group-hover:text-white transition-colors duration-300 mt-auto">
+                <div className="flex items-center text-[11px] sm:text-xs font-semibold text-gray-400 group-hover:text-white transition-colors duration-300 mt-auto pt-2">
                   <span>View service details</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
@@ -330,7 +330,7 @@ export default function Services() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-md overflow-y-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -344,10 +344,10 @@ export default function Services() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative max-w-3xl w-full rounded-card border border-white/10 glass-panel shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-visible z-10"
+              className="relative max-w-3xl w-full rounded-2xl sm:rounded-card border border-white/10 glass-panel shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-visible z-10"
             >
               {/* Left Side: Large Image */}
-              <div className="relative w-full md:w-[40%] h-64 md:h-auto min-h-[250px] overflow-hidden flex-shrink-0">
+              <div className="relative w-full md:w-[40%] h-48 sm:h-64 md:h-auto min-h-[180px] sm:min-h-[250px] overflow-hidden flex-shrink-0">
                 <Image
                   src={activeService.image}
                   alt={activeService.title}
@@ -359,11 +359,11 @@ export default function Services() {
               </div>
 
               {/* Right Side: Copy Specifications */}
-              <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
+              <div className="p-5 sm:p-8 flex-1 flex flex-col justify-between space-y-4 sm:space-y-6">
                 <div>
                   {/* Top Bar Logo / Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <span className="text-[10px] sm:text-xs font-bold text-accent uppercase tracking-widest bg-primary/10 border border-primary/20 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full">
                       Product Specsheet
                     </span>
                     <button
@@ -376,20 +376,20 @@ export default function Services() {
                   </div>
 
                   {/* Title & Core Copy */}
-                  <h3 id="modal-title" className="text-2xl font-heading font-extrabold text-white mb-3">
+                  <h3 id="modal-title" className="text-xl sm:text-2xl font-heading font-extrabold text-white mb-2 sm:mb-3">
                     {activeService.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                     {activeService.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-2">
                     {/* Column 1: Applications */}
                     <div>
-                      <h4 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2.5">
+                      <h4 className="text-[11px] sm:text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
                         Key Applications
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-1.5 sm:space-y-2">
                         {activeService.applications.map((app) => (
                           <li key={app} className="flex items-start space-x-2 text-xs text-gray-400">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
@@ -401,10 +401,10 @@ export default function Services() {
 
                     {/* Column 2: Benefits */}
                     <div>
-                      <h4 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2.5">
+                      <h4 className="text-[11px] sm:text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
                         Technical Benefits
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-1.5 sm:space-y-2">
                         {activeService.benefits.map((benefit) => (
                           <li key={benefit} className="flex items-start space-x-2 text-xs text-gray-400">
                             <CheckCircle2 className="w-3.5 h-3.5 text-accent mt-0.5 flex-shrink-0" />
@@ -417,17 +417,17 @@ export default function Services() {
                 </div>
 
                 {/* Inquiry CTA */}
-                <div className="pt-4 border-t border-white/5 flex gap-3">
+                <div className="pt-3 sm:pt-4 border-t border-white/5 flex gap-2.5 sm:gap-3">
                   <button
                     onClick={() => triggerInquiry(activeService)}
-                    className="flex-1 inline-flex items-center justify-center py-3.5 rounded-btn bg-primary hover:bg-primary/95 text-white font-semibold text-sm transition-all shadow-lg shadow-primary/25 cursor-pointer"
+                    className="flex-1 inline-flex items-center justify-center py-3 sm:py-3.5 rounded-btn bg-primary hover:bg-primary/95 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-primary/25 cursor-pointer"
                   >
-                    <MessageSquare className="w-4 h-4 mr-2" />
+                    <MessageSquare className="w-4 h-4 mr-1.5 sm:mr-2" />
                     Inquire via WhatsApp
                   </button>
                   <button
                     onClick={() => setActiveService(null)}
-                    className="px-5 py-3.5 rounded-btn bg-white/5 hover:bg-white/10 text-white border border-white/5 text-sm font-semibold transition-colors cursor-pointer"
+                    className="px-4 sm:px-5 py-3 sm:py-3.5 rounded-btn bg-white/5 hover:bg-white/10 text-white border border-white/5 text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
                   >
                     Cancel
                   </button>
